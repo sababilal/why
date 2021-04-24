@@ -6,7 +6,7 @@ const WhyResult = () => {
   const { value } = useParams();
   const history=useHistory();
   const retakeTest = () => {
-    Axios.post("http://localhost:3003/deleteanswers")
+    Axios.post("https://whyquestionnaire.herokuapp.com/deleteanswers")
       .then((response) => {
         if (response.data.deleted) {
           history.push({ pathname: "/whyquestionnaire" });

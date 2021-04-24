@@ -12,7 +12,7 @@ function App() {
   console.log("qIndex is " + qIndex);
 
   useEffect(() => {
-    Axios.post("http://localhost:3003/whyquestion")
+    Axios.post("https://whyquestionnaire.herokuapp.com/whyquestion")
       .then((response) => {
         if (response.data.whyresult) {
           let resultPath = "/whyresult/" + response.data.whyresult;
@@ -52,7 +52,7 @@ function App() {
     if (choosenOption.length == 0) {
       alert("Choose an option");
     } else {
-      Axios.post("http://localhost:3003/saveanswer", {
+      Axios.post("https://whyquestionnaire.herokuapp.com/saveanswer", {
         lockedanswer: choosenOption,
       })
         .then((response) => {
@@ -71,7 +71,7 @@ function App() {
   const goBack = () => {
     document.getElementById("qform").reset();
 
-    Axios.post("http://localhost:3003/deletelastanswer")
+    Axios.post("https://whyquestionnaire.herokuapp.com/deletelastanswer")
       .then((response) => {
         if (response.data.deleted) {
           setQindex("");
