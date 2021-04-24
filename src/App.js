@@ -12,6 +12,13 @@ function App() {
   console.log("qIndex is " + qIndex);
 
   useEffect(() => {
+    Axios.post("https://whyquestionnaire.herokuapp.com/getmessage")
+    .then((response) => {
+  alert(response.data);
+    }) .catch((error) => {
+      console.log(error);
+    });
+
     Axios.post("https://whyquestionnaire.herokuapp.com/whyquestion")
       .then((response) => {
         if (response.data.whyresult) {
