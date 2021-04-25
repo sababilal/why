@@ -88,9 +88,8 @@ function App() {
   return (
     <>
       <div className="row outblock">
-        <div className="text-center alert alert-info mx-auto" id="msgbox"></div>
+        <div className=" quesbox col-xl-4 col-lg-4 col-md-8 col-sm-10 col-12 mx-auto">
         <br />
-        <div className="col-xl-4 col-lg-4 col-md-8 col-sm-10 col-12 mx-auto">
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -106,12 +105,13 @@ function App() {
             {option.map((val, idx) => {
               return (
                 <>
-                  <span>{idx + 1}&nbsp;&nbsp;</span>
+                  <span className="radiobtn">{idx + 1}&nbsp;&nbsp;</span>
                   <input
                     type="radio"
                     required
                     value={val.id}
                     name="option"
+                    className="radiobtn"
                     onClick={(e) => {
                       chooseOption(e.target.value);
                     }}
