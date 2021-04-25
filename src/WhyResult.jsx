@@ -1,12 +1,12 @@
 import { useParams, useHistory } from "react-router-dom";
 import Axios from "axios";
-import { useState, useEffect } from "react";
+import Cookies from "js-cookie";
 
 const WhyResult = () => {
   const { value } = useParams();
-  const history=useHistory();
+  const history = useHistory();
   const retakeTest = () => {
-    Axios.post("https://whyquestionnaire.herokuapp.com/deleteanswers")
+    Axios.get("https://whyquestionnaire.herokuapp.com/deleteanswers", { withCredentials: true })
       .then((response) => {
         if (response.data.deleted) {
           history.push({ pathname: "/whyquestionnaire" });
@@ -21,7 +21,7 @@ const WhyResult = () => {
     <>
       <div className="text-center">
         <h1 className="text-center col-md-7 alert alert-success mt-5 mx-auto">
-          Your why is {value}
+          {Cookies.get("whyusername").toUpperCase()}, Your why is {value}
         </h1>
         <br />
         <button
