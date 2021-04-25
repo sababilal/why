@@ -88,7 +88,7 @@ function App() {
   return (
     <>
       <div className="row outblock">
-        <div className="quesbox p-0 col-xl-4 col-lg-4 col-md-8 col-sm-12 col-12">
+        <div className="quesbox  col-xl-4 col-lg-4 col-md-8 col-sm-12 col-12">
         <br />
           <form
             onSubmit={(e) => {

@@ -17,6 +17,12 @@ label{
 .outblock{
   margin: 0;
   padding: 0;
+  /* border-style: solid; */
+}
+.quesbox{
+  /* border-style: solid; */
+  margin-left: 0px!important;
+  margin-top: 0px!important;
 }
 #retaketestbtn{
   width: 150px;
