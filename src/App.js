@@ -84,11 +84,11 @@ function App() {
         console.log(error);
       });
   };
-
+  if(qIndex)
   return (
     <>
       <div className="row outblock">
-        <div className="quesbox  col-xl-4 col-lg-4 col-md-8 col-sm-12 col-12">
+        <div className="quesbox col-xl-4 col-lg-4 col-md-8 col-sm-12 col-12">
         <br />
           <form
             onSubmit={(e) => {
@@ -136,10 +136,16 @@ function App() {
               Save and Next
             </button>
           </form>
+        
         </div>
       </div>
     </>
   );
+  else
+  return (
+  <>
+<h1>Loading.....</h1>
+  </>);
 }
 
 export default App;
