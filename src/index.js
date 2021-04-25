@@ -15,7 +15,7 @@ ReactDOM.render(
     <Route exact path="/welcome" component={Welcome}></Route>
       <Route exact path="/whyquestionnaire" component={App}></Route>
       <Route path="/whyresult/:value" component={WhyResult}></Route>
-      <Redirect to="welcome" />
+      <Redirect to="/welcome" />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

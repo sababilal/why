@@ -74,14 +74,6 @@ function App() {
         console.log(error);
       });
   };
-<<<<<<< HEAD
-  if (qIndex)
-    return (
-      <>
-        <div className="row outblock">
-          <h2>FIND YOUR WHY</h2>
-          <div className="quesbox col-xl-4 col-lg-4 col-md-8 col-sm-12 col-12">
-=======
  
 if(!qIndex)
   return (
@@ -126,41 +118,8 @@ if(!qIndex)
               );
             })}
             <br />
->>>>>>> b08463894ed5cc70a74b3a45b8d77943047c9716
             <br />
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-              }}
-              id="qform"
-              noValidate
-            >
-              <h3 id="qtext">
-                <span id="qtext">Q{qIndex} / </span>
-                {qtext}
-              </h3>
-              <br />
-              {option.map((val, idx) => {
-                return (
-                  <>
-                    <span className="radiobtn">{idx + 1}&nbsp;&nbsp;</span>
-                    <input
-                      type="radio"
-                      required
-                      value={val.id}
-                      name="option"
-                      className="radiobtn"
-                      onClick={(e) => {
-                        chooseOption(e.target.value);
-                      }}
-                    />
-                    <label>&nbsp;{val.option}</label>
-                    <br />
-                  </>
-                );
-              })}
-              <br />
-              <br />
+           
               <button
                 id="backbtn"
                 ref={backButton}
@@ -174,23 +133,12 @@ if(!qIndex)
                 Save and Next
               </button>
             </form>
-          </div>
+          
         </div>
-<<<<<<< HEAD
-      </>
-    );
-  else
-    return (
-      <>
-        <h1>Loading.....</h1>
-      </>
-    );
-=======
       </div>
     </>
   );
  
->>>>>>> b08463894ed5cc70a74b3a45b8d77943047c9716
 }
 
 export default App;
