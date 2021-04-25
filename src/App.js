@@ -97,8 +97,8 @@ function App() {
             id="qform"
             noValidate
           >
-            <h3>
-              <span>Q{qIndex} / </span>
+            <h3 id="qtext">
+              <span id="qtext" >Q{qIndex} / </span>
               {qtext}
             </h3>
             <br />
