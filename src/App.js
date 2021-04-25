@@ -12,7 +12,7 @@ function App() {
   console.log("qIndex is " + qIndex);
 
   useEffect(() => {
-    Axios.post("https://whyquestionnaire.herokuapp.com/getmessage")
+    Axios.post("https://cors-anywhere.herokuapp.com(whyquestionnaire.herokuapp.com/getmessage)")
     .then((response) => {
   alert(response.data);
     }) .catch((error) => {
