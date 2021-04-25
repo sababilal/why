@@ -35,3 +35,6 @@ label{
 #qtext{
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+label{
+  font-size: 14pt;
+}
