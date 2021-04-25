@@ -84,7 +84,13 @@ function App() {
         console.log(error);
       });
   };
-  if(qIndex)
+ 
+if(!qIndex)
+  return (
+  <>
+<h1>Loading.....</h1>
+  </>);
+  else
   return (
     <>
       <div className="row outblock">
@@ -141,11 +147,7 @@ function App() {
       </div>
     </>
   );
-  else
-  return (
-  <>
-<h1>Loading.....</h1>
-  </>);
+ 
 }
 
 export default App;
