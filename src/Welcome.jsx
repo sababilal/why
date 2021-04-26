@@ -16,9 +16,8 @@ const Welcome = () => {
       alert("Please enter your name first");
     } else {
       Cookies.set("whyusername", name);
-      Axios.get(
+      Axios.post(
         `https://whyquestionnaire.herokuapp.com/adduser?username=${name}`,
-        { withCredentials: true }
       )
         .then((response) => {
           if (response.data.userid) {

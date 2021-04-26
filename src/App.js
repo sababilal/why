@@ -37,6 +37,8 @@ function App() {
   }, [qIndex]);
 
   const nextQ = () => {
+  let userid=Cookies.get("whyuser");    
+
     document.getElementById("qform").reset();
     if (choosenOption.length == 0) {
       alert("Choose an option");
@@ -46,7 +48,7 @@ function App() {
         {
           lockedanswer: choosenOption,
         },
-        { withCredentials: true }
+         { userid: userid }
       )
         .then((response) => {
           setQindex("");
@@ -64,7 +66,7 @@ function App() {
   const goBack = () => {
     document.getElementById("qform").reset();
 
-    Axios.get("https://whyquestionnaire.herokuapp.com/deletelastanswer", { withCredentials: true })
+    Axios.post("https://whyquestionnaire.herokuapp.com/deletelastanswer",  { userid: userid })
       .then((response) => {
         if (response.data.deleted) {
           setQindex("");
