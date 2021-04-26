@@ -65,6 +65,7 @@ function App() {
 
   const goBack = () => {
     document.getElementById("qform").reset();
+    let userid=Cookies.get("whyuser");    
 
     Axios.post("https://whyquestionnaire.herokuapp.com/deletelastanswer",  { userid: userid })
       .then((response) => {
