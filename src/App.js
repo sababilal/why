@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Axios from "axios";
 import { useHistory } from "react-router-dom";
+import Cookies from "js-cookie";
 
 function App() {
   const backButton = useRef(null);
@@ -11,7 +12,8 @@ function App() {
   const [choosenOption, chooseOption] = useState("");
 
   useEffect(() => {
-    Axios.get("https://whyquestionnaire.herokuapp.com/whyquestion", { withCredentials: true })
+  let userid=Cookies.get("whyuser");    
+    Axios.post("https://whyquestionnaire.herokuapp.com/whyquestion", { userid: userid })
       .then((response) => {
         if (response.data === false) {
           history.push({ pathname: "/welcome" });
