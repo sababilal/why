@@ -16,8 +16,7 @@ const Welcome = () => {
       alert("Please enter your name first");
     } else {
       Axios.get(
-        "https://whyquestionnaire.herokuapp.com/adduser",
-        { username: name },
+        `https://whyquestionnaire.herokuapp.com/adduser?username=${name}`,
         { withCredentials: true }
       )
         .then((response) => {
