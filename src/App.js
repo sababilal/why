@@ -47,8 +47,8 @@ function App() {
         "https://whyquestionnaire.herokuapp.com/saveanswer",
         {
           lockedanswer: choosenOption,
-        },
-         { userid: userid }
+          userid:userid
+        }
       )
         .then((response) => {
           setQindex("");
