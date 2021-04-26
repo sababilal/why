@@ -15,15 +15,16 @@ const Welcome = () => {
     if (!name) {
       alert("Please enter your name first");
     } else {
-      Cookies.set('whyusername',name);
+      Cookies.set("whyusername", name);
       Axios.get(
-        `https://whyquestionnaire.herokuapp.com/adduser`,
+        `https://whyquestionnaire.herokuapp.com/adduser?username=${name}`,
         { withCredentials: true }
       )
         .then((response) => {
-          if (response.data === true)
+          if (response.data.userid) {
+            Cookies.set("whyuser", response.data.userid);
             history.push({ pathname: "/whyquestionnaire" });
-          else history.push({ pathname: "/welcome" });
+          } else history.push({ pathname: "/welcome" });
         })
         .catch((error) => {
           console.log(error);
