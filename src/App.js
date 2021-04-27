@@ -96,7 +96,6 @@
     if (!qIndex)
       return (
         <>
-          {/* <h1>Loading.....</h1> */}
           <div className="row text-center mt-5">
           <div className="alert alert-warning col-md-4 col-10 mx-auto"><h1>Loading...</h1>.</div>
           </div>
